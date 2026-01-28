@@ -216,10 +216,3 @@ variable "vpc_accessible_services_dry_run" {
   type        = list(string)
   default     = ["*"]
 }
-
-# New variable to control lifecycle.create_before_destroy on policy resources.
-variable "service_perimeter_create_before_destroy" {
-  description = "Whether to set lifecycle.create_before_destroy on service perimeter policy resources. Set to false to avoid create_before_destroy behavior."
-  type        = bool
-  default     = true
-}
