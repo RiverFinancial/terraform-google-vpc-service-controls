@@ -169,6 +169,7 @@ variable "egress_policies_dry_run" {
       }), {}),
       identity_type = optional(string, null)
       identities    = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
