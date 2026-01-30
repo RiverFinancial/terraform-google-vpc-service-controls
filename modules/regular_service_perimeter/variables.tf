@@ -118,6 +118,7 @@ variable "egress_policies" {
       }), {}),
       identity_type = optional(string, null)
       identities    = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -143,6 +144,7 @@ variable "ingress_policies" {
       }), {}),
       identity_type = optional(string, null)
       identities    = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({

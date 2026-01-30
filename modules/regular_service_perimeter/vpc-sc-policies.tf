@@ -111,7 +111,7 @@ resource "google_access_context_manager_service_perimeter_egress_policy" "egress
         access_level = sources.value == "access_level" ? sources.key != "*" ? "accessPolicies/${var.policy}/accessLevels/${sources.key}" : "*" : null
       }
     }
-    source_restriction = each.value["from"]["sources"] != {} ? "SOURCE_RESTRICTION_ENABLED" : null
+    source_restriction = each.value["from"]["source_restriction"] != null ? each.value["from"]["source_restriction"] : each.value["from"]["sources"] != {} ? "SOURCE_RESTRICTION_ENABLED" : null
   }
   egress_to {
     resources          = each.value["to"]["resources"]
@@ -207,7 +207,7 @@ resource "google_access_context_manager_service_perimeter_dry_run_egress_policy"
         access_level = sources.value == "access_level" ? sources.key != "*" ? "accessPolicies/${var.policy}/accessLevels/${sources.key}" : "*" : null
       }
     }
-    source_restriction = each.value["from"]["sources"] != {} ? "SOURCE_RESTRICTION_ENABLED" : null
+    source_restriction = each.value["from"]["source_restriction"] != null ? each.value["from"]["source_restriction"] : each.value["from"]["sources"] != {} ? "SOURCE_RESTRICTION_ENABLED" : null
   }
   egress_to {
     resources          = each.value["to"]["resources"]
