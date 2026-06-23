@@ -116,8 +116,9 @@ variable "egress_policies" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -141,8 +142,9 @@ variable "ingress_policies" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -165,8 +167,9 @@ variable "egress_policies_dry_run" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -190,8 +193,9 @@ variable "ingress_policies_dry_run" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -226,8 +230,9 @@ variable "ingress_policies_map" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -250,8 +255,9 @@ variable "ingress_policies_dry_run_map" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -274,8 +280,9 @@ variable "egress_policies_map" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
@@ -299,8 +306,9 @@ variable "egress_policies_dry_run_map" {
         resources     = optional(list(string), [])
         access_levels = optional(list(string), [])
       }), {}),
-      identity_type = optional(string, null)
-      identities    = optional(list(string), null)
+      identity_type      = optional(string, null)
+      identities         = optional(list(string), null)
+      source_restriction = optional(string, null)
     })
     to = object({
       operations = optional(map(object({
