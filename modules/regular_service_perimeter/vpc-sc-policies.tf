@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-
-
 locals {
   # enforced
   # ingress_rules

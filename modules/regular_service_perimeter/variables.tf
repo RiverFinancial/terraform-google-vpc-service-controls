@@ -30,7 +30,7 @@ variable "perimeter_name" {
 }
 
 variable "restricted_services" {
-  description = "GCP services that are subject to the Service Perimeter restrictions. Must contain a list of services. For example, if storage.googleapis.com is specified, access to the storage buckets inside the perimeter must meet the perimeter's access restrictions."
+  description = "GCP services that are subject to the Service Perimeter restrictions. Must contain a list of services. For example, if storage.googleapis.com is specified, access to the storage bu[...]"
   type        = list(string)
   default     = []
 }
@@ -42,19 +42,19 @@ variable "resources" {
 }
 
 variable "resource_keys" {
-  description = "A list of keys to use for the Terraform state. The order should correspond to var.resources and the keys must not be dynamically computed. If `null`, var.resources will be used as keys."
+  description = "A list of keys to use for the Terraform state. The order should correspond to var.resources and the keys must not be dynamically computed. If `null`, var.resources will be used as[...]"
   type        = list(string)
   default     = null
 }
 
 variable "access_levels" {
-  description = "A list of AccessLevel resource names that allow resources within the ServicePerimeter to be accessed from the internet. AccessLevels listed must be in the same policy as this ServicePerimeter. Referencing a nonexistent AccessLevel is a syntax error. If no AccessLevel names are listed, resources within the perimeter can only be accessed via GCP calls with request origins within the perimeter. Example: 'accessPolicies/MY_POLICY/accessLevels/MY_LEVEL'. For Service Perimeter Bridge, must be empty."
+  description = "A list of AccessLevel resource names that allow resources within the ServicePerimeter to be accessed from the internet. AccessLevels listed must be in the same policy as this Serv[...]"
   type        = list(string)
   default     = []
 }
 
 variable "restricted_services_dry_run" {
-  description = "(Dry-run) GCP services that are subject to the Service Perimeter restrictions. Must contain a list of services. For example, if storage.googleapis.com is specified, access to the storage buckets inside the perimeter must meet the perimeter's access restrictions.  If set, a dry-run policy will be set."
+  description = "(Dry-run) GCP services that are subject to the Service Perimeter restrictions. Must contain a list of services. For example, if storage.googleapis.com is specified, access to the [...]"
   type        = list(string)
   default     = []
 }
@@ -66,7 +66,7 @@ variable "resources_dry_run" {
 }
 
 variable "resource_keys_dry_run" {
-  description = "(Dry-run) A list of keys to use for the Terraform state. The order should correspond to var.resources_dry_run and the keys must not be dynamically computed. If `null`, var.resources_dry_run will be used as keys."
+  description = "(Dry-run) A list of keys to use for the Terraform state. The order should correspond to var.resources_dry_run and the keys must not be dynamically computed. If `null`, var.resourc[...]"
   type        = list(string)
   default     = null
 }
@@ -96,7 +96,7 @@ variable "egress_policies_keys_dry_run" {
 }
 
 variable "access_levels_dry_run" {
-  description = "(Dry-run) A list of AccessLevel resource names that allow resources within the ServicePerimeter to be accessed from the internet. AccessLevels listed must be in the same policy as this ServicePerimeter. Referencing a nonexistent AccessLevel is a syntax error. If no AccessLevel names are listed, resources within the perimeter can only be accessed via GCP calls with request origins within the perimeter. Example: 'accessPolicies/MY_POLICY/accessLevels/MY_LEVEL'. For Service Perimeter Bridge, must be empty. If set, a dry-run policy will be set."
+  description = "(Dry-run) A list of AccessLevel resource names that allow resources within the ServicePerimeter to be accessed from the internet. AccessLevels listed must be in the same policy as[...]"
   type        = list(string)
   default     = []
 }
@@ -210,13 +210,13 @@ variable "ingress_policies_dry_run" {
 }
 
 variable "vpc_accessible_services" {
-  description = "A list of [VPC Accessible Services](https://cloud.google.com/vpc-service-controls/docs/vpc-accessible-services) that will be restricted within the VPC Network. Use [\"*\"] to allow any service (disable VPC Accessible Services); Use [\"RESTRICTED-SERVICES\"] to match the restricted services list; Use [] to not allow any service."
+  description = "A list of [VPC Accessible Services](https://cloud.google.com/vpc-service-controls/docs/vpc-accessible-services) that will be restricted within the VPC Network. Use [\"*\"] to all[...]"
   type        = list(string)
   default     = ["*"]
 }
 
 variable "vpc_accessible_services_dry_run" {
-  description = "(Dry-run) A list of [VPC Accessible Services](https://cloud.google.com/vpc-service-controls/docs/vpc-accessible-services) that will be restricted within the VPC Network. Use [\"*\"] to allow any service (disable VPC Accessible Services); Use [\"RESTRICTED-SERVICES\"] to match the restricted services list; Use [] to not allow any service."
+  description = "(Dry-run) A list of [VPC Accessible Services](https://cloud.google.com/vpc-service-controls/docs/vpc-accessible-services) that will be restricted within the VPC Network. Use [\"*[...]"
   type        = list(string)
   default     = ["*"]
 }
