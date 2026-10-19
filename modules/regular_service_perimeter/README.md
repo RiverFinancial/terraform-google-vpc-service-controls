@@ -90,6 +90,15 @@ module "regular_service_perimeter_1" {
 }
 ```
 
+## Replacing enforced ingress rules
+
+- Enforced ingress rules use `create_before_destroy`: Terraform creates a replacement before deleting the original.
+- Keep the map key (or legacy `ingress_policies_keys` entry) stable and choose a distinct `title` to request an ordered replacement. Changing a key produces separate create/delete actions instead.
+- Identity-only changes remain in-place updates; this lifecycle setting does not fix provider update bugs.
+- Old and new rules must be able to coexist, with sufficient policy quota headroom. Access granted by the original remains until it is deleted; prefer a replacement that grants the same or narrower access.
+- Terraform propagates this lifecycle behavior to dependencies. Review the full consumer plan, including the perimeter, before applying.
+- Creation completion does not provide a separate enforcement-propagation or workload-validation checkpoint. Use two staged applies when that checkpoint is required.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
