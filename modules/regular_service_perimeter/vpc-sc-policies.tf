@@ -92,6 +92,11 @@ resource "google_access_context_manager_service_perimeter_ingress_policy" "ingre
     }
   }
 
+  # Keep the existing allowance until its replacement has been created.
+  lifecycle {
+    create_before_destroy = true
+  }
+
   depends_on = [google_access_context_manager_service_perimeter_resource.service_perimeter_resource]
 }
 
